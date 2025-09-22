@@ -30,6 +30,7 @@ Yosys → For performing synthesis (converting RTL design into gate-level repres
 -Testbench → A separate Verilog file written to test the design. It applies input stimulus, monitors outputs, and verifies that the design works correctly. The testbench is not synthesized, it is only for simulation.
 
 
+
 **Lab Session 1 – Activities and Commands**
 
 1. Virtual Machine Setup
@@ -47,6 +48,7 @@ cd sky130RTLDesignAndSynthesisWorkshop
 cd my_lib
 
 ls -- # Viewing all .lib files used for synthesis 
+
 
 
 
@@ -79,6 +81,9 @@ Comments:
 ⦁	gtkwave tb_good_mux.vcd 
 
 
+
+
+
 3. RTL Synthesis with Yosys
    
 ⦁	Invoked Yosys:
@@ -87,27 +92,27 @@ yosys
 
 Steps in Yosys workflow:
 
-Read Liberty file (standard cell info for synthesis):
+1.Read Liberty file (standard cell info for synthesis):
 read_liberty -lib path/to/.lib file
 
 
-Read Verilog design:
+2.Read Verilog design:
 read_verilog path/to/design.v_file
 
 
-Perform synthesis (synth - top module):
+3.Perform synthesis (synth - top module):
 synth -top <module_name> 
 
 
-Generate netlist using ABC:
+4.Generate netlist using ABC:
 abc -liberty path/to/.lib file
 
 
-Analyze and show results:
+5.Analyze and show results:
 show 
 
 
-Yosys write_verilog options
+6.Yosys write_verilog options
 
 Default command:
 write_verilog good_mux_netlist.v
@@ -145,5 +150,6 @@ write_verilog -noattr good_mux_netlist.v
 ⦁	write_verilog -noattr → Generates a clean netlist with no synthesis attributes.
 
 ⦁	show → Visualizes netlist or synthesis results graphically.
+
 
 
