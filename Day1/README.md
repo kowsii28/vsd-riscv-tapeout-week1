@@ -132,6 +132,9 @@ write_verilog -noattr good_mux_netlist.v
 
 →Useful if you want a lightweight netlist without extra metadata.
 
+To view the generated netlist file
+⦁ !vim filename.v → Opens the generated netlist file to view its contents in the terminal.
+e.g., !vim good_mux_netlist.v
 
  
 **Comments:**
@@ -150,6 +153,7 @@ write_verilog -noattr good_mux_netlist.v
 ⦁	write_verilog -noattr → Generates a clean netlist with no synthesis attributes.
 
 ⦁	show → Visualizes netlist or synthesis results graphically.
+
 
 
 
